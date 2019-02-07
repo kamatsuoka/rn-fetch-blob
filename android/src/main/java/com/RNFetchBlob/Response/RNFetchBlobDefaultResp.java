@@ -48,7 +48,7 @@ public class RNFetchBlobDefaultResp extends ResponseBody {
 
     @Override
     public BufferedSource source() {
-        return expolib_v1.okio.buffer(new ProgressReportingSource(originalBody.source()));
+        return Okio.buffer(new ProgressReportingSource(originalBody.source()));
     }
 
     private class ProgressReportingSource implements Source {
