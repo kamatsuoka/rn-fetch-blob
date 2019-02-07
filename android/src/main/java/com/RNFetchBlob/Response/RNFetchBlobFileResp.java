@@ -72,7 +72,7 @@ public class RNFetchBlobFileResp extends ResponseBody {
     @Override
     public BufferedSource source() {
         ProgressReportingSource countable = new ProgressReportingSource();
-        return expolib_v1.okio.buffer(countable);
+        return Okio.buffer(countable);
     }
 
     private class ProgressReportingSource implements Source {
